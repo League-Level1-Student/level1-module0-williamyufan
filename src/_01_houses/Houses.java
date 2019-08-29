@@ -1,5 +1,7 @@
 package _01_houses;
 
+import java.util.Random;
+
 import org.jointheleague.graphical.robot.Robot;
 
 public class Houses {		
@@ -16,18 +18,31 @@ public class Houses {
 		mike.move(80);
 		mike.turn(-90);
 		for(int i=0;i<=10; i++) {
-		drawHouse();
+			Random mikejohnson=new Random();
+			int x=mikejohnson.nextInt(3);
+		String p="blue";
+			String y="";
+			if(x==0) {y="small";}
+			if(x==1) {y="medium";}
+			if(x==2) {y="large";}
+		drawHouse(y,p);
 	
 }
 		
 
 }
-	static void drawHouse() {
-		mike.move(100);
+	static void drawHouse(String height, String color) {
+		
+	mike.
+		int size=0;
+		if(height.equals("small")) {size=60;}
+		if(height.equals("medium")) {size=120;}
+		if(height.equals("large")) {size=250;}
+		mike.move(size);
 		mike.turn(90);
 		mike.move(80);
 		mike.turn(90);
-		mike.move(100);
+		mike.move(size);
 		mike.turn(-90);
 		mike.move(40);
 		mike.turn(-90);
