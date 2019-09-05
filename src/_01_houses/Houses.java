@@ -20,11 +20,21 @@ public class Houses {
 		for(int i=0;i<=10; i++) {
 			Random mikejohnson=new Random();
 			int x=mikejohnson.nextInt(3);
-		String p="blue";
+		String p="";
+		
 			String y="";
-			if(x==0) {y="small";}
-			if(x==1) {y="medium";}
-			if(x==2) {y="large";}
+			if(x==0) {
+				y="small";
+				p="red";
+			}
+			if(x==1) {
+				y="medium";
+			p="green";
+			}
+			if(x==2) {
+				y="large";
+			p="blue";
+			}
 		drawHouse(y,p);
 	
 }
@@ -33,18 +43,37 @@ public class Houses {
 }
 	static void drawHouse(String height, String color) {
 		
-	mike.
+		
+		if(color.equals("red")) {mike.setPenColor(150, 0, 0);}
+		if(color.equals("green")) {mike.setPenColor(0, 150, 0);}
+		if(color.equals("blue")) {mike.setPenColor(0, 0, 150);}
+	
 		int size=0;
 		if(height.equals("small")) {size=60;}
 		if(height.equals("medium")) {size=120;}
 		if(height.equals("large")) {size=250;}
+		
 		mike.move(size);
-		mike.turn(90);
-		mike.move(80);
-		mike.turn(90);
+		if(height.equals("large")) {drawFlatRoofs();}
+		else {drawPointyRoofs();}
+		
 		mike.move(size);
 		mike.turn(-90);
 		mike.move(40);
 		mike.turn(-90);
+		
+	}
+	static void  drawPointyRoofs() {
+		mike.turn(45);
+		mike.move(45);
+		mike.turn(90);
+		mike.move(45);
+		mike.turn(45);
+		
+	}
+	static void drawFlatRoofs() {
+		mike.turn(90);
+		mike.move(80);
+		mike.turn(90);
 	}
 }
