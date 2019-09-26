@@ -54,24 +54,50 @@ public class BodyPartQuiz {
 		int r=0;
 
 		// 2. Set the size of the window in the initializeGui() method 
-
+		
 		// 4. Ask the user who this person is and store their answer
 		String guess = JOptionPane.showInputDialog("who is this?");
 
 		// 5. Check their answer. If they guessed correctly:
 		// -- Tell them they are right and increase the score by 1
-
+		if(guess.equals("arnold")) {JOptionPane.showMessageDialog(null, "You are right!");
+		r=0+1;
+		}
+		else if(guess.contentEquals("Arnold Schwarzenegger")) {JOptionPane.showMessageDialog(null, "You are right!");}
 		// 6. Otherwise:
 		// -- Tell them they are wrong and who the person is
-
+		else {JOptionPane.showMessageDialog(null, "You are wrong, it is Arnold Schwarzenegger");
 		// 7. Use the showNextImage() method below to get the next image
-		showNextImage();
+		showNextImage();}
 
 		// 8. .... repeat 4-7 for all your images.....
-
-		// 9. Show them their current score
-
+		String guess1 = JOptionPane.showInputDialog("who is this?");
+		if(guess1.equals("Leonardo")) {JOptionPane.showMessageDialog(null, "You are right!");
+		r=0+2;
+		}
+		else if(guess1.contentEquals("Leonardo Dicrapio")) {JOptionPane.showMessageDialog(null, "You are right!");}
+		
+		else {JOptionPane.showMessageDialog(null, "You are wrong, it is Leonardo");}
+		showNextImage();
+		String guess11 = JOptionPane.showInputDialog("who is this?");
+		if(guess11.equals("Morgan")) {JOptionPane.showMessageDialog(null, "You are right!");
+		r=0+3;
+		}
+		else if(guess11.contentEquals("Morgan Freeman")) {JOptionPane.showMessageDialog(null, "You are right!");}
+		
+		else {JOptionPane.showMessageDialog(null, "You are wrong, it is Morgan Freeman");}
+		showNextImage();
+		String guess111 = JOptionPane.showInputDialog("who is this?");
+		
+		if(guess111.equals("Jack")) {JOptionPane.showMessageDialog(null, "You are right!");
+		r=0+4;
+		}
+		else if(guess111.contentEquals("Jack Black")) {JOptionPane.showMessageDialog(null, "You are right!");}
+		
+		else {JOptionPane.showMessageDialog(null, "You are wrong, it is Jack Black");}
 	}
+	
+	
 
 	public void showNextImage() {
 		panel.removeAll();
